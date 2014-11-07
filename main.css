@@ -1,0 +1,11 @@
+/*  Main CSS  */
+
+.rahmen {
+	border:5px solid;
+	border-radius:10px;
+	margin-left:20%;
+	margin-top:20px;
+	width:60%;
+	padding: 20px 20px 1px 20px;
+
+}
