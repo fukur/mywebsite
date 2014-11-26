@@ -14,6 +14,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript">
+		
+		// Wikipedia Suche - Öffnet die Wikipedia in neuem Tab
+		// @param mode - Artikelsuche: 'art'; Volltextsuche: 'vollt';
+		function wikiSuche (mode) {
+			
+			suche = document.getElementById('wikiSuchBegriff').value;
+			
+			if(mode == 'art') {
+				window.open("http://de.wikipedia.org/wiki/"+suche , '_blank');
+			}
+			else if(mode == 'vollt') {
+				window.open("http://de.wikipedia.org/wiki/Spezial:Suche?fulltext=Volltextsuche&search="+suche , '_blank');
+			}
+			else {
+				alert('Interner Fehler');
+			}
+			
+		}
+</script>
 
   </head>
   <body>
@@ -32,7 +53,7 @@
       	<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Web Suche <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="./suche.html">Wikipedia-Suche</a></li>
+            <li class="active"><a href="./suche.html">Wikipedia-Suche</a></li>
             <li class="divider"></li>
             <li><a href="./googlesuche.html">Google-Suche</a></li>
           </ul>
@@ -43,7 +64,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
         <li><a href="./impressum.html">Impressum</a></li>
       </ul>
     </div>
@@ -53,16 +74,30 @@
 <br /><br />
 
 <div class="container">
-
+	
 	<div class="page-header text-center">
-	<h1>Kontakt</h1>
+	<h1>Web-Suche</h1>
 	</div>
-
+	
 	<div class="jumbotron">
-		<h2>Email Kontakt:</h2>
-		<p><a class="btn btn-primary btn-lg text-center" role="button" href="mailto:kevin.weigand@mni.thm.de">Email senden</a></p>
+	
+		<h2>Wikipedia Suche</h2>
+		<br />
+		<form class="form-horizontal" role="form">
+		        <div class="form-group">
+		        
+		        	<div class="row">
+					  <div class="col-md-6">
+					  	<input id="wikiSuchBegriff" class="form-control input-lg" type="text" placeholder="Suchbegriff">
+					  </div>
+					  <div class="col-md-4">
+					  	<a class="btn btn-primary btn-lg" role="button" href="javascript:wikiSuche('art')">Artikel</a>
+					  	<a class="btn btn-default btn-lg" role="button" href="javascript:wikiSuche('vollt')">Volltext</a>
+					  </div>
+					</div>
 		
-
+		        </div>
+		</form>
 	
 	</div>
 </div>

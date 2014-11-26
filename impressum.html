@@ -4,48 +4,91 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Website</title>
+    <title>Erste Webseite</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="main.css" type="text/css" rel="stylesheet">
-
-
-  </head>
-  <body>
-
-    <div class="rahmen">
     
-    <ul class="nav nav-tabs" role="tablist">
-  		<li><a href="./index.html">Home</a></li>
-  		<li><a href="./kontakt.html">Kontakt</a></li>
-  		<li class="active"><a href="./impressum.html">Impressum</a></li>
-	</ul>
-    
-    <br />
-    
-    
-
-	 <div class="page-header">
-  		<h1>My Website! <small>Impressum</small></h1>
-	</div>
-    
-	<div class="jumbotron">
-    <p>Webseite erstellt von Kevin Weigand</p>
-    </div>
-
-
-  		<div>
-  			<div class="alert alert-info" align="center" role="alert">
-    			Website by <a href="mailto:kevin.weigand@mni.thm.de"><span class="label label-primary">Kevin Weigand&nbsp;<span class="glyphicon glyphicon-envelope"></span></span></a>
-    		</div>
-  		</div>
-	
-	</div>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+   
+
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./index.html">Erste Webseite</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	
+      	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Web Suche <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="./suche.html">Wikipedia-Suche</a></li>
+            <li class="divider"></li>
+            <li><a href="./googlesuche.html">Google-Suche</a></li>
+          </ul>
+        </li>
+      	
+        <li><a href="./codecademy.html">Codecademy</a></li>
+        <li><a href="./git.html">GitHub</a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./kontakt.html">Kontakt</a></li>
+        <li class="active"><a href="./impressum.html">Impressum</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br /><br />
+
+<div class="container">
+
+	<div class="page-header text-center">
+	<h1>Impressum</h1>
+	</div>
+
+	<div class="jumbotron">
+	
+			<h3>Angaben gemäß § 5 TMG:</h3>
+			
+			<h4>Kevin Weigand</h4>
+			<h4>Wiesenstraße 14</h4>
+			<h4>35390 Gießen</h4>
+			
+			<h3>Kontakt:</h3>
+			
+			<h4>E-Mail: kevin.weigand@mni.thm.de</h4>
+			<br />
+			<h5>Quelle: <em><a href="http://www.e-recht24.de">http://www.e-recht24.de</a></em></h5>
+			
+		<br /><br /><br />
+		<div>
+			<p><strong>Haftung für Inhalte</strong></p>
+			<h4>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</h4>
+			<br />
+			<p><strong>Haftung für Links</strong></p>
+			<h4>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</h4>
+			<br />
+			<p><strong>Urheberrecht</strong></p>
+			<h4>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</h4>
+		</div>
+
+	
+	</div>
+</div>
+
+
+
   </body>
 </html>

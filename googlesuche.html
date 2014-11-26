@@ -14,6 +14,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript">
+		
+		// Wikipedia Suche - Öffnet die Wikipedia in neuem Tab
+		// @param mode - Artikelsuche: 'art'; Volltextsuche: 'vollt';
+		function googleSuche () {
+			
+			suche = document.getElementById('googleSuchBegriff').value;
+			if(suche != "") {
+				window.open("https://www.google.de/?#q="+suche , '_blank');
+			}
+		}
+</script>
 
   </head>
   <body>
@@ -34,7 +47,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="./suche.html">Wikipedia-Suche</a></li>
             <li class="divider"></li>
-            <li><a href="./googlesuche.html">Google-Suche</a></li>
+            <li class="active"><a href="./googlesuche.html">Google-Suche</a></li>
           </ul>
         </li>
       	
@@ -43,7 +56,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
         <li><a href="./impressum.html">Impressum</a></li>
       </ul>
     </div>
@@ -53,16 +66,29 @@
 <br /><br />
 
 <div class="container">
-
+	
 	<div class="page-header text-center">
-	<h1>Kontakt</h1>
+	<h1>Web-Suche</h1>
 	</div>
-
+	
 	<div class="jumbotron">
-		<h2>Email Kontakt:</h2>
-		<p><a class="btn btn-primary btn-lg text-center" role="button" href="mailto:kevin.weigand@mni.thm.de">Email senden</a></p>
+	
+		<h2>Google Suche</h2>
+		<br />
+		<form class="form-horizontal" role="form" action="javascript:googleSuche()">
+		        <div class="form-group">
+		        
+		        	<div class="row">
+					  <div class="col-md-6">
+					  	<input id="googleSuchBegriff" class="form-control input-lg" type="text" placeholder="Suchbegriff">
+					  </div>
+					  <div class="col-md-4">
+					  	<button type="submit" class="btn btn-primary btn-lg">Suche</button>
+					  </div>
+					</div>
 		
-
+		        </div>
+		</form>
 	
 	</div>
 </div>

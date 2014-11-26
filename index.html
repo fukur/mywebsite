@@ -4,54 +4,75 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Website</title>
+    <title>Erste Webseite</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="main.css" type="text/css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 
 
   </head>
   <body>
    
-    <div class="rahmen">
-	    <ul class="nav nav-tabs" role="tablist">
-	  		<li class="active"><a href="./index.html">Home</a></li>
-	  		<li><a href="./kontakt.html">Kontakt</a></li>
-	  		<li><a href="./impressum.html">Impressum</a></li>
-		</ul>
-	    <br />
-	     
-	     <div class="page-header">
-	  		<h1>My Website! <small>Home</small></h1>
-		</div>
-		
-		<div class="alert alert-info" role="alert" width="200px" align="center">Willkommen!</div>
+
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./index.html">Erste Webseite</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	
+      	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Web Suche <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="./suche.html">Wikipedia-Suche</a></li>
+            <li class="divider"></li>
+            <li><a href="./googlesuche.html">Google-Suche</a></li>
+          </ul>
+        </li>
+      	
+        <li><a href="./codecademy.html">Codecademy</a></li>
+        <li><a href="./git.html">GitHub</a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./impressum.html">Impressum</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
 	
-	    <div class="jumbotron">
-	    <h3>IBS</h3>
-	    <p>"Eigene Webseite erstellen" im Rahmen der Veranstaltung Internetbasierte Systeme der Technischen Hochschule Mittelhessen Gießen</p>
-	    
-	    <p><a class="btn btn-primary btn-lg" role="button" href="http://www.codecademy.com/fukur">Codecademy</a></p>
-	    
-	    </div>
-	    
-	    
-	    
+	<div class="page-header text-center">
+	<h1>Erste Webseite</h1>
+	</div>
+	
+	<div class="alert alert-info" role="alert" width="200px" align="center">
+	<h3>Herzlich Willkommen!</h3>
+	</div>
+	
+	<div class="jumbotron">
+		<h3>IBS</h3>
+		<p>"Eigene Webseite erstellen" im Rahmen der Veranstaltung Internetbasierte Systeme der Technischen Hochschule Mittelhessen Gießen</p>
+	</div>
+	
+	<div class="col-md-2"></div><div class="col-md-8">
+	<div class="alert alert-info text-center" role="alert">
+	    Webseite von <a href="mailto:kevin.weigand@mni.thm.de"><span class="label label-primary">Kevin Weigand&nbsp;<span class="glyphicon glyphicon-envelope"></span></span></a>
+	</div>
+	</div><div class="col-md-2"></div>
+</div>
 
-	  		<div >
-	  			<div class="alert alert-info" align="center" role="alert">
-	    			Website by <a href="mailto:kevin.weigand@mni.thm.de"><span class="label label-primary">Kevin Weigand&nbsp;<span class="glyphicon glyphicon-envelope"></span></span></a>
-	    		</div>
-	  		</div>
 
-		
-		</div>
-    
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
