@@ -89,16 +89,22 @@
 	
 		<h2>Wikipedia Suche</h2>
 		<br />
-		<form class="form-horizontal" role="form">
+		<form action="javascript:wikiSuche('art')" class="form-horizontal" role="form">
 		        <div class="form-group">
-		        
+		        	<label for="wikiSuchBegriff">Suchbegriff:</label>
 		        	<div class="row">
 					  <div class="col-md-6">
 					  	<input id="wikiSuchBegriff" class="form-control input-lg" type="text" placeholder="Suchbegriff">
 					  </div>
 					  <div class="col-md-4">
-					  	<a class="btn btn-primary btn-lg" role="button" href="javascript:wikiSuche('art')">Artikel</a>
+					  	<button type="submit" class="btn btn-primary btn-lg">Artikel</button>
 					  	<a class="btn btn-default btn-lg" role="button" href="javascript:wikiSuche('vollt')">Volltext</a>
+					  	<button type="button" class="btn btn-default btn-lg" onclick="javascript:wikiSuche('vollt')">Volltext TEST</button>
+					  	<!-- Andere alte Buttons 
+					  	<button type="button" class="btn btn-default btn-lg" href="javascript:wikiSuche('vollt')">Volltext</button>
+					  	<a class="btn btn-primary btn-lg" role="button" href="javascript:wikiSuche('art')">Artikel</a>
+					  	-->
+					  
 					  </div>
 					</div>
 		
