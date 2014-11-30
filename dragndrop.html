@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Erste Webseite</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" type="text/css" rel="stylesheet">
+    
+
+
+  </head>
+  <body>
+   
+
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        	<span class="sr-only">Mobile Navigation</span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      	</button>
+    	<a class="navbar-brand" href="./index.html">Erste Webseite</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	
+      	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Web Suche <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="./suche.html">Wikipedia-Suche</a></li>
+            <li class="divider"></li>
+            <li><a href="./googlesuche.html">Google-Suche</a></li>
+          </ul>
+        </li>
+      	
+        <li><a href="./codecademy.html">Codecademy</a></li>
+        <li><a href="./git.html">GitHub</a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./kontakt.html">Kontakt</a></li>
+        <li><a href="./impressum.html">Impressum</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br /><br />
+
+<div class="container">
+
+	<div class="page-header text-center">
+	<h1>Spielereien</h1>
+	</div>
+
+	<div class="jumbotron">
+		<div class="text-center"><p>Verschiebe die Objekte!</p></div>
+		<br /><br />
+		<div class="row">
+			<div class="col-md-4">
+			<div id="div1" onmousedown="startDrag(this);">
+			 </div>
+			 </div>
+			 
+			 <div class="col-md-4">
+			 <div id="div2" onmousedown="startDrag(this);">
+			 </div>
+			 </div>
+			 
+			 <div class="col-md-4">
+			 <div id="div3" onmousedown="startDrag(this);">
+			</div>
+			</div>
+		</div>
+		<br /><br /><br /><br /><br /><br /><br /><br />
+	</div>
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script language="JavaScript" type="text/javascript">
+		
+		var object = null;
+		var objectX = 0;
+		var objectY = 0;
+		
+		var startX = 0;
+		var startY = 0;
+		
+		// bool ob aktueller Browser ein IE ist
+		var IE = document.all&&!window.opera;
+		
+		document.onmousemove = doDrag;
+		document.onmouseup = stopDrag;
+		
+		function startDrag(obj) {
+			 object = obj ;
+			 startX = objectX - object.offsetLeft;
+			 startY = objectY - object.offsetTop;
+		}
+			 
+		function doDrag(ereignis) {
+			 
+			 // Internet Explorer
+			 objectX = (IE) ? window.event.clientX : ereignis.pageX;
+			 objectY = (IE) ? window.event.clientY : ereignis.pageY;
+			 
+			 if (object != null) {
+				 object.style.left = (objectX - startX) + "px";
+				 object.style.top = (objectY - startY) + "px";
+			 }
+		}
+		
+		function stopDrag(ereignis) {
+			object = null;
+		}
+		
+	</script>
+    
+  </body>
+</html>
+
+
+
+
