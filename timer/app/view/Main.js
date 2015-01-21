@@ -1,5 +1,5 @@
 Ext.define('Timer.view.Main', {
-	extend: "Ext.TabPanel",
+	extend: "Ext.tab.Panel",
 	requires: ['Timer.view.Home',
 	           'Timer.view.Impressum',
 	           'Timer.view.Timer'
@@ -8,21 +8,23 @@ Ext.define('Timer.view.Main', {
 	config: {
 		fullscreen: true,
         tabBarPosition: 'bottom',
-        styleHtmlContent: true,
         id: 'tabBar',
         items: [{
+        	
             title: 'Home',
             iconCls: 'home',
-            xtype: 'homePage'
+            items: {xtype: 'homePage'}
+            
         }, {
             title: 'Timer',
             iconCls: 'time',
-            xtype: 'timerpage'
+            items: {xtype: 'timerpage'}
             
         }, {
             title: 'Impressum',
             iconCls: 'info',
-            xtype: 'impressumPage'
+            scrollable: true,
+            items: {xtype: 'impressumPage'}
             
         }] // items
 	}

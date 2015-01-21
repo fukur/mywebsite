@@ -61,7 +61,7 @@ Ext.define("Timer.view.Timer", {
 			title: 'timerPanel', 
 			docked: "top",
 			centered: true,
-			html: '<div><span id="timePanel"><span id="minutes">10</span>:<span id="seconds">00</span></span></div>'
+			html: '<div><span id="timePanel"><span id="minutes">10</span>:<span id="seconds">00</span></span></div><br /><br /><br /><br /><div id="fragen"></div>'
 		};
 	    
 	    var audio = {
@@ -102,10 +102,9 @@ Ext.define("Timer.view.Timer", {
 	    this.fireEvent("countdownPicker", this);
 	    this.zeigePicker();
 	},
+	
 	starteTap: function () {
 	    this.fireEvent("startTimer", this);
-	    Ext.getCmp('handleCounterButton').disable();
-	    Ext.getCmp('handlePickerButton').disable();
 	},
 	
 	zeigePicker: function () {

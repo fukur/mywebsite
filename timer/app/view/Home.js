@@ -35,8 +35,8 @@ Ext.define("Timer.view.Home", {
                    '',
                    '<div id="welcHeader">Willkommen in der WebApp von Kevin Weigand</div>',
                    '<br><br><br>',
-                   '<div id="homeText">In dieser WebApp, geschrieben in SenchaTouch 2 geschrieben,',
-                   ' finden Sie einen Countdown Timer.</div>'
+                   '<div id="homeText">WebApp mit Countdown Timer',
+                   ' Prototype für ArsNova.</div>'
                ].join("")
 			
 		};

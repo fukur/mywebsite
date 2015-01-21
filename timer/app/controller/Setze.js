@@ -16,12 +16,21 @@ Ext.define("Timer.controller.Setze", {
 
     
     setCountdown: function () {
+    	// Keine weitere Funktion
         //console.log("countdown auswahl");
     },
     
     
     starteTimer: function () {
+    	
+    	// Fragen Text anzeigen
+    	Ext.get('fragen').setHtml("Nun haben Sie Zeit Fragen zu beantworten!");
+    	
+    	// Start und Set Button deaktivieren
+    	Ext.getCmp('handleCounterButton').disable();
+	    Ext.getCmp('handlePickerButton').disable();
 		
+	    // aktuelle Zeit
 		var begin = Date.now();
 		
 		// auswahl der minuten aus dem panel lesen
@@ -29,6 +38,8 @@ Ext.define("Timer.controller.Setze", {
 		
 		var tmpSeconds = minuten*60;
 		
+		
+		// Funktion die jede Sekunde aufgerufen wird
 		var counter=setInterval(function(){
 			
 			// Bisher verstrichene Sekunden
@@ -63,9 +74,13 @@ Ext.define("Timer.controller.Setze", {
 			   Ext.getCmp('handleCounterButton').enable();
 			   Ext.getCmp('handlePickerButton').enable();
 			   
+			   // Alert Fenster
 			   Ext.Msg.alert("Timer ist abgelaufen!");
 			   
+			   
+			   // Leeren
 			   TimerTab.setBadgeText('');
+			   Ext.get('fragen').setHtml("");
 
 			   return;
 			}
