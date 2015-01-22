@@ -19,7 +19,8 @@ Ext.define("Timer.view.Timer", {
 	    // Setzte Timer Button
 	    var setButton = {
 	        xtype: "button",
-	        text: 'Setze Timer',
+	        // text: 'Setze Timer',
+	        iconCls: 'settings',
 	        id: 'handlePickerButton',
 	        handler: this.setzeTap,
 	        scope: this
@@ -28,7 +29,7 @@ Ext.define("Timer.view.Timer", {
 	    // Starte timer button
 	    var startButton = {
 		        xtype: "button",
-		        text: 'Starte Timer',
+		        text: 'Start',
 		        //ui: 'round',
 		        id: 'handleCounterButton',
 		        disabled: false,
@@ -87,7 +88,8 @@ Ext.define("Timer.view.Timer", {
 					         audio = container.down('audio');
 					         audio.stop();
 					         this.hide();
-					         Ext.get('minutes').setHtml(10);
+					         Ext.get('minutes').setHtml('10');
+					         Ext.get('seconds').setHtml('00');
 					     }
 					}
 		        ]
