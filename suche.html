@@ -13,12 +13,20 @@
 
 	
 	<script type="text/javascript">
+	
+	var allowSearch;
 		
 		// Wikipedia Suche - Öffnet die Wikipedia in neuem Tab
 		// @param mode - Artikelsuche: 'art'; Volltextsuche: 'vollt';
 		function wikiSuche (mode) {
 			
 			suche = document.getElementById('wikiSuchBegriff').value;
+			
+			if(!allowSearch) {
+				checkForm();
+				alert('Nicht aktzeptierter Suchbegriff!');
+				return;
+			}
 			
 			if(mode == 'art') {
 				window.open("http://de.wikipedia.org/wiki/"+suche , '_blank');
@@ -30,6 +38,44 @@
 				alert('Interner Fehler');
 			}
 			
+		}
+		
+		function checkForm() {
+			suche = document.getElementById('wikiSuchBegriff').value;
+			allowSearch=false;
+			
+			if(suche.length>40) {
+				$('#error').addClass('form-group has-error');
+				$('#errorText').html('<li>Suchbegriff zu lang!</li><br />');
+				$('#errorText').show('slow');
+			}
+			else if(suche === "") {
+				$('#error').addClass('form-group has-error');
+				$('#errorText').html('<li>Suchbegriff darf nicht leer sein!</li><br />');
+				$('#errorText').show('slow');
+			}
+			else if(
+					suche.indexOf('<') != -1 ||
+					suche.indexOf('>') != -1 ||
+					suche.indexOf('{') != -1 ||
+					suche.indexOf('}') != -1 ||
+					suche.indexOf('[') != -1 ||
+					suche.indexOf(']') != -1 ||
+					suche.indexOf('&') != -1 ||
+					suche.indexOf('"') != -1 ||
+					suche.indexOf('\'') != -1 ||
+					suche.indexOf('|') != -1 
+					) {
+				$('#error').addClass('form-group has-error');
+				$('#errorText').html('<li>Suchbegriff darf keine Sonderzeichen enthalten!</li><br />');
+				$('#errorText').show('slow');
+			}
+			else {
+				$('#errorText').hide('slow');
+				$('#error').removeClass('form-group has-error');
+				$('#errorText').html('');
+				allowSearch=true;
+			}
 		}
 </script>
 
@@ -64,6 +110,7 @@
       	
         <li><a href="./codecademy.html">Codecademy</a></li>
         <li><a href="./git.html">GitHub</a></li>
+        <li><a href="./timer/" target="_blank">Timer  <span class="glyphicon glyphicon-share-alt"></span></a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -86,12 +133,18 @@
 	
 		<h2>Wikipedia Suche</h2>
 		<br />
+		<div id="errorText" class="text-danger">
+					
+		</div>
+		<br />
 		<form action="javascript:wikiSuche('art')" class="form-horizontal" role="form">
 		        <div class="form-group">
 		        	<label for="wikiSuchBegriff">Suchbegriff:</label>
-		        	<div class="row">
+		        	<div class="row" id="error">
 					  <div class="col-md-6">
-					  	<input id="wikiSuchBegriff" class="form-control input-lg" type="text" placeholder="Suchbegriff">
+
+					  	<input id="wikiSuchBegriff" class="form-control input-lg" type="text" placeholder="Suchbegriff" onkeyup="checkForm()">
+
 					  </div>
 					  <div class="col-md-4">
 					  	<button type="submit" class="btn btn-primary btn-lg">Artikel</button>
@@ -103,6 +156,8 @@
 					  
 					  </div>
 					</div>
+					
+					
 					<br /><br />
 					<span>Barrierefreies Surfen:</span>
 					<br />

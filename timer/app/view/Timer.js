@@ -65,6 +65,8 @@ Ext.define("Timer.view.Timer", {
 			html: '<div><span id="timePanel"><span id="minutes">10</span>:<span id="seconds">00</span></span></div><br /><br /><br /><br /><div id="fragen"></div>'
 		};
 	    
+	    
+	    // (unsichtbares) Audio Element und Button zum Stoppen des Audio Elements
 	    var audio = {
 		        xtype: "container",
 		        docked: "bottom",
@@ -100,6 +102,7 @@ Ext.define("Timer.view.Timer", {
 	    this.add([topToolbar, myPanel, audio]);
 	},
 	
+	// Listener der Buttons
 	setzeTap: function () {
 	    this.fireEvent("countdownPicker", this);
 	    this.zeigePicker();
@@ -109,6 +112,7 @@ Ext.define("Timer.view.Timer", {
 	    this.fireEvent("startTimer", this);
 	},
 	
+	// Picker anzeigen
 	zeigePicker: function () {
 		
 		var picker = Ext.create('Ext.Picker', {
@@ -191,6 +195,7 @@ Ext.define("Timer.view.Timer", {
             }
         });
 		
+		// Default für Picker
 		picker.setValue( {timerCountdown: 10}, true ) 
         picker.show();
 		

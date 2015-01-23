@@ -62,15 +62,21 @@ Ext.define("Timer.controller.Setze", {
 		    var TimerTab = tabBar.down('.tab[title=Timer]');
 		    TimerTab.setBadgeText(min+':'+(sec<10?'0'+sec:sec));
 			
-			//if (tmpSeconds <= 0) nicht ganz genau
+		    // ZEIT ABGELAUFEN
+		    
+			//if (tmpSeconds <= 0) --> nicht ganz genau
 			if(zeitLaeuft >= minuten*60) // ziemlich genau da system zeit genommen wird
 			{
+			   // Funktionsaufruf jede Sekunde stoppen
 			   clearInterval(counter);
-			   			   
+			   
+			   // Wecker sound abspielen
 			   Ext.getCmp('sound').play();
 			   
+			   // Button zum stoppen von Audio anzeigen
 			   Ext.getCmp('stopAudio').show();
 			   
+			   // Start, Set Buttons aktivieren
 			   Ext.getCmp('handleCounterButton').enable();
 			   Ext.getCmp('handlePickerButton').enable();
 			   
@@ -85,7 +91,7 @@ Ext.define("Timer.controller.Setze", {
 			   return;
 			}
 			
-		}, 1000); //1000 will  run it every 1 second
+		}, 1000); //1000 will  run it every second
 		 
 		
 	}
