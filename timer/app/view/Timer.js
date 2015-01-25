@@ -14,10 +14,7 @@ Ext.define("Timer.view.Timer", {
 	
 	    this.callParent(arguments);
 	    
-	    // Audio File zu Beginn laden
-	    var soundRing = document.getElementById('timerRing');
-	    soundRing.load();
-	    
+	    	    
 	    
 	    // Setzte Timer Button
 	    var setButton = {
@@ -93,7 +90,7 @@ Ext.define("Timer.view.Timer", {
 					        // use ComponentQuery to get the audio component
 					        // audio = container.down('audio');
 					         
-					         var tmpAudio = document.getElementById('ring');
+					         var tmpAudio = document.getElementById('timerRing');
 					         tmpAudio.pause();
 					         tmpAudio.currentTime=0;
 					         

@@ -23,6 +23,10 @@ Ext.define("Timer.controller.Setze", {
     
     starteTimer: function () {
     	
+    	// Audio File zu Beginn laden
+	    var soundRing = document.getElementById('timerRing');
+	    soundRing.load();
+    	
     	// Fragen Text anzeigen
     	Ext.get('fragen').setHtml("Nun haben Sie Zeit Fragen zu beantworten!");
     	
@@ -73,7 +77,7 @@ Ext.define("Timer.controller.Setze", {
 			   
 			   // Wecker sound abspielen
 			   //Ext.getCmp('sound').play();
-			   document.getElementById('ring').play();
+			   document.getElementById('timerRing').play();
 			   
 			   // Button zum stoppen von Audio anzeigen
 			   Ext.getCmp('stopAudio').show();
