@@ -14,7 +14,9 @@ Ext.define("Timer.view.Timer", {
 	
 	    this.callParent(arguments);
 	    
-	    //var x=10;
+	    // Audio File zu Beginn laden
+	    document.getElementById('ring').load();
+	    
 	    
 	    // Setzte Timer Button
 	    var setButton = {
@@ -71,13 +73,13 @@ Ext.define("Timer.view.Timer", {
 		        xtype: "container",
 		        docked: "bottom",
 		        items: [
-		            {
+		            /*{ ## Funktioniert in einigen Browsern nicht!!! daher mit <audio> gelöst ##
 					     xtype: 'audio',
 					     url: 'ring.mp3',
 					     id: 'sound',
 					     autoplay:false,
 					     hidden:true
-					},
+					},*/
 					{
 					     xtype: 'button',
 					     ui: 'decline-round',
@@ -85,10 +87,15 @@ Ext.define("Timer.view.Timer", {
 					     hidden: true,
 					     text:'Stop ringing',
 					     handler: function() {
-					         var container = this.getParent().getParent(),
-					         // use ComponentQuery to get the audio component (using its xtype)
-					         audio = container.down('audio');
-					         audio.stop();
+					        
+					    	 //var container = this.getParent().getParent();
+					        // use ComponentQuery to get the audio component
+					        // audio = container.down('audio');
+					         
+					         var tmpAudio = document.getElementById('ring');
+					         tmpAudio.pause();
+					         tmpAudio.currentTime=0;
+					         
 					         this.hide();
 					         Ext.get('minutes').setHtml('10');
 					         Ext.get('seconds').setHtml('00');
@@ -97,8 +104,7 @@ Ext.define("Timer.view.Timer", {
 		        ]
 		    };
 	    
-	    
-	
+	                    	
 	    this.add([topToolbar, myPanel, audio]);
 	},
 	

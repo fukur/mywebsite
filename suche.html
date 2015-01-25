@@ -40,11 +40,18 @@
 			
 		}
 		
+		/*
+		Überprüft den eingegebenen Suchbegriff auf Kriterien:
+			1) Darf nicht länger als 40 Zeichen sein
+			2) Darf nicht leer sein
+			3) Darf folgende Sonderzeichen NICHT enthalten: < > { } [ ] & " ' |
+		-> Zeigt Fehlermeldung an!
+		*/
 		function checkForm() {
 			suche = document.getElementById('wikiSuchBegriff').value;
 			allowSearch=false;
 			
-			if(suche.length>40) {
+			if(suche.length>100) {
 				$('#error').addClass('form-group has-error');
 				$('#errorText').html('<li>Suchbegriff zu lang!</li><br />');
 				$('#errorText').show('slow');
@@ -133,7 +140,7 @@
 	
 		<h2>Wikipedia Suche</h2>
 		<br />
-		<div id="errorText" class="text-danger">
+		<div id="errorText" class="text-danger" hidden="true">
 					
 		</div>
 		<br />
