@@ -16,7 +16,7 @@ Ext.define("Timer.view.Timer", {
 	    
 	    // Audio File zu Beginn laden
 	    var soundRing = document.getElementById('timerRing');
-	    
+	    soundRing.load();
 	    
 	    
 	    // Setzte Timer Button
@@ -116,7 +116,6 @@ Ext.define("Timer.view.Timer", {
 	},
 	
 	starteTap: function () {
-		soundRing.load();
 	    this.fireEvent("startTimer", this);
 	},
 	
